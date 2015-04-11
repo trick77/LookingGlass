@@ -132,7 +132,12 @@ def index():
         test_ipv4 = app.config["TEST_IPV4"],
         test_ipv6 = app.config["TEST_IPV6"],
         test_files = app.config["TEST_FILES"],
-        additional_lgs = app.config["ADDITIONAL_LG_LIST"]
+        additional_lgs = app.config["ADDITIONAL_LG_LIST"],
+        
+        peering_asn = app.config["PEERING_ASN"],
+        peering_map_url = app.config["PEERING_MAP_URL"],
+	    peering_contact = app.config["PEERING_CONTACT"],
+        peering_policy = app.config["PEERING_POLICY"]
     )
 
 if __name__ == "__main__":
