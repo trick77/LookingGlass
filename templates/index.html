@@ -32,6 +32,25 @@ Python backend rewrite by Brandon Whaley, Ramnode LLC, http://ramnode.com
         </div>
       </header>
 
+      <!-- Peering Information -->
+      <section id="peering">
+        <div class="row">
+          {% if not additional_lgs -%}
+          <div class="span12">
+          {%- else -%}
+          <div class="span8">
+          {%- endif %}
+            <div class="well">
+              <span id="legend">DN42 peering information</span><!-- IE/Safari dislike <legend> out of context -->
+              <p>ASN: <b>{{ peering_asn }} </b> (view </b><a href="{{ peering_map_url }}{{ peering_asn }}">peering map</a>)</p>
+              <div style="margin-left: 10px;">
+                <p>Contact: {{ peering_contact }}</p>
+                <p>Policy: {{ peering_policy }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       <!-- Network Information -->
       <section id="information">
         <div class="row">
@@ -46,7 +65,6 @@ Python backend rewrite by Brandon Whaley, Ramnode LLC, http://ramnode.com
               <div style="margin-left: 10px;">
                 <p>Test IPv4: {{ test_ipv4 }}</p>
                 <p>Test IPv6: {{ test_ipv6 }}</p>
-                <p>Test files: {% for test_file in test_files %}<a href="{{ url_for('static', filename=test_file + '.test') }}" id="{{ test_file }}">{{ test_file }}</a> {% endfor %}
                 </p>
               </div>
               <p>Your IP Address: <b><a href="#tests" id="userip">{{ request.remote_addr }}</a></b></p>
@@ -114,6 +132,7 @@ Python backend rewrite by Brandon Whaley, Ramnode LLC, http://ramnode.com
         </p>
         <p>Inspired by <a href="https://github.com/telephone/LookingGlass">LookingGlass</a></p>
         <p>Python backend by <a href="https://github.com/ramnode">RamNode</a></p>
+        <p>Adapted for DN42 by <a href="https://github.com/trick77/LookingGlass">trick77</a></p>
       </footer>
 
     </div><!-- /container -->
